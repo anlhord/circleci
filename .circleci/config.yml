@@ -8,11 +8,9 @@ jobs:
        - run: sudo apt-get install -y --no-install-recommends p7zip-full
        - run: sudo apt-get install -y --no-install-recommends gcc-multilib
        - run: 7za x gccgo-7.1.0-003.7z
-       - run: ls -la
-       - run: chmod +x gccgo/bin/gccgo
-       - run: export LIBRARY_PATH=./gccgo/lib/gcc/x86_64-pc-linux-gnu/7.1.0/:$LIBRARY_PATH
-       - run: export LIBRARY_PATH=./gccgo/lib64/:$LIBRARY_PATH
-       - run: export LIBRARY_PATH=./gccgo/lib/gcc/x86_64-pc-linux-gnu/:$LIBRARY_PATH
+       - run: pwd
+       - run: chmod +x ./gccgo/bin/gccgo
+       - run: export LIBRARY_PATH=./gccgo/lib/:$LIBRARY_PATH
        - run: ./gccgo/bin/gccgo dispatch.go main.go security.go -static-libgo
        - run: ./a.out
 

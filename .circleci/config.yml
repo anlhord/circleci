@@ -12,6 +12,6 @@ jobs:
        - run: chmod +x ./gccgo/bin/gccgo
        - run: export LIBRARY_PATH=/home/circleci/project/gccgo/lib/gcc/x86_64-pc-linux-gnu/7.1.0:$LIBRARY_PATH
        - run: ./gccgo/bin/gccgo dispatch.go main.go security.go -Wl,-R,/home/circleci/project/gccgo/lib/gcc/x86_64-pc-linux-gnu/7.1.0 -static-libgo
-       - run: curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'  
+       - run: curl ipinfo.io/ip  
        - run: ./a.out
 

@@ -7,4 +7,7 @@ jobs:
        - checkout
        - run: sudo apt-get install -y --no-install-recommends p7zip-full
        - run: 7za x gccgo-7.1.0-003.7z
+       - run: ls -la
+       - run: tree
        - run: echo "hello world"
+

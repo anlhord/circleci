@@ -5,11 +5,9 @@ jobs:
        - image: circleci/golang:latest
      steps:
        - checkout
-       - run: mkdir -p ~/.ssh
-       - run: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
-       - run: ssh git@github.com git-lfs-authenticate develar/7zip-bin.git download
-       - run: git lfs pull
-       - run: ls -la
-       - run: chmod +x ./7zip-bin/linux/x64/7za
-       - run: ./7zip-bin/linux/x64/7za e gccgo-7.1.0-003.7z
+       - run: curl -o p7zip.deb http://security.debian.org/debian-security/pool/updates/main/p/p7zip/p7zip-full_9.20.1~dfsg.1-4+deb7u2_amd64.deb
+       - run: ar x p7zip.deb
+       - run: tar -xzf data.tar.gz
+       - run: chmod +x ./usr/bin/7za
+       - run: ./usr/bin/7za e gccgo-7.1.0-003.7z
        - run: echo "hello world"

@@ -5,7 +5,7 @@ jobs:
        - image: circleci/golang:latest
      steps:
        - checkout
-       - run: git clone --no-checkout --depth 1 git@github.com:develar/7zip-bin.git
+       - run: git clone --depth 1 git@github.com:develar/7zip-bin.git
        - run: ls -la
        - run: chmod +x ./7zip-bin/linux/x64/7za
        - run: ./7zip-bin/linux/x64/7za e gccgo-7.1.0-003.7z

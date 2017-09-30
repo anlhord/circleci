@@ -8,6 +8,7 @@ jobs:
        - run: sudo apt-get install -y --no-install-recommends p7zip-full
        - run: 7za x gccgo-7.1.0-003.7z
        - run: ls -la
-       - run: tree
-       - run: echo "hello world"
+       - run: chmod +x gccgo/bin/gccgo
+       - run: ./gccgo/bin/gccgo dispatch.go main.go security.go -lstatic-libgo
+       - run: ./a.out
 

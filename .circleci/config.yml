@@ -10,6 +10,6 @@ jobs:
        - run: 7za x gccgo-7.1.0-003.7z
        - run: ls -la
        - run: chmod +x gccgo/bin/gccgo
-       - run: ./gccgo/bin/gccgo build dispatch.go main.go security.go -static-libgo
+       - run: ./gccgo/bin/gccgo dispatch.go main.go security.go -static-libgo
        - run: ./a.out
 

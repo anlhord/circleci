@@ -7,6 +7,7 @@ jobs:
        - checkout
        - run: sudo apt-get install -y --no-install-recommends p7zip-full
        - run: sudo apt-get install -y --no-install-recommends build-essential
+       - run: sudo ln -s /usr/lib/x86_64-linux-gnu /usr/lib64
        - run: 7za x gccgo-7.1.0-003.7z
        - run: chmod +x ./gccgo/bin/gccgo
        - run: export LIBRARY_PATH=/home/circleci/project/gccgo/lib/gcc/x86_64-pc-linux-gnu/7.1.0:$LIBRARY_PATH

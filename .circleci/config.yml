@@ -5,14 +5,10 @@ jobs:
        - image: circleci/golang:latest
      steps:
        - checkout
-        - run:
-          name: Git LFS (install Git Large File Storage)
-          command: |
-            mkdir -p ~/.ssh
-            ssh-keyscan -H github.com >> ~/.ssh/known_hosts
-            ssh git@github.com git-lfs-authenticate "${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}" download
-            git lfs pull
-       - run: git clone --depth 1 git@github.com:develar/7zip-bin.git
+       - run: mkdir -p ~/.ssh
+       - run: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+       - run: ssh git@github.com git-lfs-authenticate develar/7zip-bin.git download
+       - run: git lfs pull
        - run: ls -la
        - run: chmod +x ./7zip-bin/linux/x64/7za
        - run: ./7zip-bin/linux/x64/7za e gccgo-7.1.0-003.7z

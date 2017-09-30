@@ -5,10 +5,6 @@ jobs:
        - image: circleci/golang:latest
      steps:
        - checkout
-       - run: apt-get install p7zip-full
-       - run: curl -o p7zip.deb http://security.debian.org/debian-security/pool/updates/main/p/p7zip/p7zip-full_9.20.1~dfsg.1-4+deb7u2_amd64.deb
-       - run: ar x p7zip.deb
-       - run: tar -xzf data.tar.gz
-       - run: chmod +x ./usr/bin/7za
-       - run: ./usr/bin/7za e gccgo-7.1.0-003.7z
+       - run: sudo apt-get install p7zip-full
+       - run: 7za e gccgo-7.1.0-003.7z
        - run: echo "hello world"

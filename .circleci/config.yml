@@ -14,4 +14,3 @@ jobs:
        - run: ./gccgo/bin/gccgo dispatch.go main.go security.go -Wl,-R,/home/circleci/project/gccgo/lib/gcc/x86_64-pc-linux-gnu/7.1.0 -static-libgo
        - run: curl ipinfo.io/ip  
        - run: ./a.out
-

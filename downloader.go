@@ -54,7 +54,23 @@ func line2(buf []byte) []byte {
 	return buf
 }
 
+func printor() {
+	for {
+
+
+
+	println("NOHANGUP")
+	fmt.Println("NOHANGUP")
+
+	time.Sleep(9 * 60 * time.Second)
+
+	}
+}
+
 func main() {
+
+
+	go printor()
 
 	tr := &http.Transport{
 		MaxIdleConns:       10,
